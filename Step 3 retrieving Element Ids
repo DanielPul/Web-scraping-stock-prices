@@ -1,0 +1,21 @@
+//
+Step 3: Retrieving Element Ids
+We identify the element by looking at the rendered web page,
+but it's impossible for a script to determine that. To find the target element,
+get its element ID and enter it into the script. Getting the ID of an item is pretty easy.
+Let's say you want the item id for the stock name.
+All we have to do is go to the URL and see the text in the console. Get the text next to the class
+
+Let's iterate through the list of stocks we need and use soup.find() to find the tag with the specified id and print the company, current stock price, change in percentage of stocks and volume of stocks.
+
+company = soup.find('h1', {'class': 'usph14Head displaySmall'}).text
+
+price = soup.find('span', {'class': 'uht141Pri contentPrimary displayBase'}).text
+
+change = soup.find('div', {'class': 'uht141Day bodyBaseHeavy contentNegative'}).text
+
+volume=soup.find('table', {'class': 'tb10Table col l5'}).find_all('td')[1].text
+
+As we can see the price and change has the same Class Id. So let's fund all the span tags and use the find_all('span')[tag number] and extract the text.
+
+//
