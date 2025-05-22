@@ -1,0 +1,16 @@
+//
+Step 1: Import Libraries
+We import the modules for Pandas, Requests and Beautiful soup. Add a user agent and a header declaration.
+This makes sure that the target website for web scraping won't automatically classify 
+the traffic as spam and end up being blacklisted. Many user agents are available at https://developers.whatismybrowser.com/
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import time
+
+headers = {'user-agent':'Mozilla/5.0 \
+            (Windows NT 10.0; Win64; x64) \
+            AppleWebKit/537.36 (KHTML, like Gecko) \
+            Chrome/84.0.4147.105 Safari/537.36'}
+//
