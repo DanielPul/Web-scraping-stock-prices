@@ -1,0 +1,40 @@
+//
+
+Step 4:  Try Data Extraction
+Basically, during the extraction of data from a web page, we can expect AttributeError (When we try to access the Tag using BeautifulSoup from a website and that tag is not present on that website then BeautifulSoup always gives an AttributeError). To handle this error let's use Try and except the concept. Also, you can use the code in Google collab as it has all the updated versions.
+
+How does try() work? 
+
+First, the try clause is executed i.e. the code between the try and except clause.
+If there is no exception, then only the try clause will run, except the clause is finished.
+If any exception occurs, the try clause will be skipped and except clause will run.
+If any exception occurs, but the except clause within the code doesn’t handle it, it is passed on to the outer try statements. If the exception is left unhandled, then the execution stops.
+A try statement can have more than one except clause.
+When the try block is executed we are going to extract data from the individual stock and store the data in the variables 
+
+Company(name of the stock)
+Price (current price)
+Change(change of stock value +ve increase or -ve decrease)
+Volume(stock volume)
+We will use a list and store the company name, price of a stock, change in stock and volume of each stock and store them in a list that consists of the stock data of all individual stocks.
+
+all=[]
+for url in urls:
+    page = requests.get(url,headers=headers)
+    try:
+        soup = BeautifulSoup(page.text, 'html.parser')
+        company = soup.find('h1', {'class': 'usph14Head displaySmall'}).text
+        price = soup.find('span', {'class': 'uht141Pri contentPrimary displayBase'}).text
+        change = soup.find('div', {'class': 'uht141Day bodyBaseHeavy contentNegative'}).text
+        volume=soup.find('table', {'class': 'tb10Table col l5'}).find_all('td')[1].text
+        x=[company,price,change,volume]
+        all.append(x)
+        
+    except AttributeError:
+      print("Change the Element id")
+    # Wait for a short time to avoid rate limiting
+    time.sleep(10)
+    
+# This code is modified by Susobhan Akhuli
+
+
