@@ -1,0 +1,21 @@
+// 
+This is a public information - here is the source - We are giving all the credit to our source https://www.geeksforgeeks.org/web-scraping-for-stock-prices-in-python/ 
+Web scraping is a data extraction method that collects data only from websites. It is often used for data mining and gathering valuable insights from large websites. Web scraping is also useful for personal use. Python includes a nice library called BeautifulSoup that enables web scraping. In this article, we will extract current stock prices using web scraping and save them in an excel file using Python.
+
+Required Modules
+In this article, we'll look at how to work with the Requests, Beautiful Soup and Pandas Python packages to consume data from websites. 
+
+Requests module allows you to integrate your Python programs with web services.
+Beautiful Soup module is designed to make screen scraping a snap. Using Python's interactive console and these two libraries, we'll walk through how to assemble a web page and work with the textual information available on it.
+Pandas module is designed to provide high-performance data manipulation in Python. It is used for data analysis that requires lots of processing, such as restructuring, cleaning or merging, etc.
+Approach
+Initially, we are going to import our required libraries.
+Then we take the URL stored in our list.
+We will feed the URL to our soup object which will then extract relevant information from the given URL based on the class id we provide it.
+Store all the data in the Pandas Dataframe and save it to a CSV file.
+Note: The HTML structure of stock data websites may change frequently.  
+
+Before running this script, inspect the webpage and update the element IDs, classes or XPath selectors accordingly.  
+Use browser developer tools (F12 - Inspect Element) to find the correct elements for price, change and volume.
+
+//
