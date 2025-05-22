@@ -1,0 +1,24 @@
+//
+Step 5: Storing Data to Data Frame 
+Let's declare the column names and using pandas create a Dataframe with columns: Company, Price, Change and Volume.
+
+Syntax:
+
+Column_names = [list of column names]
+dataframe = pd.DataFrame(columns = column_names)
+
+Next, we will iterate through the list and fill each data frame's each row with the details of each company
+by using built-in functions loc( ).  The loc() function is label based data selecting method which means tha
+t we have to pass the name of the row or column which we want to select. The df.loc[index] = i, assigning
+the data to that row after that we will update the index in the Data Frame. The reset_index() is used to reset the index of the Data Frame from 0.
+
+column_names = ["Company", "Price", "Change", "Volume"]
+df = pd.DataFrame(columns=column_names)
+for i in all:
+    index = 0
+    df.loc[index] = i
+    df.index = df.index + 1
+df = df.reset_index(drop=True)
+df
+
+//
